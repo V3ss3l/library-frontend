@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Adress} from "./model/adress.model";
+import {PortalService} from "./portal.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'library-frontend';
+
+  constructor() {
+  }
 }

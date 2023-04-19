@@ -1,7 +1,7 @@
 import {APP_INITIALIZER, NgModule} from '@angular/core';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {HttpClientModule} from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { PortalComponent } from './portal/portal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,27 +11,19 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatInputModule} from "@angular/material/input";
 import {MatExpansionModule} from "@angular/material/expansion";
-
-export function initializeKeycloak(keycloak: KeycloakService) {
-  return () =>
-    keycloak.init({
-      config: {
-        url: 'http://localhost:8188', // поставить свой порт для кейклока
-        realm: 'daily-quotes', // поставить свой realm
-        clientId: 'frontend'
-      },
-      initOptions: {
-        onLoad: 'login-required',
-        silentCheckSsoRedirectUri:
-          window.location.origin + '/assets/silent-check-sso.html'
-      }
-    });
-}
+import { AuthorizationComponent } from './account-directory/auth/authorization.component';
+import {PortalService} from "./portal.service";
+import {MatCardModule} from "@angular/material/card";
+import {MatGridListModule} from "@angular/material/grid-list";
+import { AccountComponent } from './account-directory/account-component/account.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
-    PortalComponent
+    PortalComponent,
+    AuthorizationComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
@@ -43,8 +35,12 @@ export function initializeKeycloak(keycloak: KeycloakService) {
     MatTabsModule,
     MatInputModule,
     MatExpansionModule,
+    HttpClientModule,
+    MatCardModule,
+    MatGridListModule,
+    FormsModule
   ],
-  providers: [
+  providers: [PortalService
     /*{
       provide: APP_INITIALIZER,
       useFactory: initializeKeycloak,

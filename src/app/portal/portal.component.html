@@ -14,3 +14,12 @@
     <mat-hint></mat-hint>
   </mat-form-field>
 </mat-expansion-panel>
+<mat-grid-list cols=2>
+  <mat-grid-tile *ngFor="let book of books">
+    <mat-card>
+      <mat-card-header>{{book.bookName}}</mat-card-header>
+      <mat-card-content>{{book.annotation}}</mat-card-content>
+      <mat-card-footer>{{book.author}}</mat-card-footer>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
