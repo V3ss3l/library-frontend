@@ -17,6 +17,8 @@ import {MatCardModule} from "@angular/material/card";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { AccountComponent } from './account-directory/account-component/account.component';
 import {FormsModule} from "@angular/forms";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import {FormsModule} from "@angular/forms";
     HttpClientModule,
     MatCardModule,
     MatGridListModule,
-    FormsModule
+    FormsModule,
+    MatSidenavModule,
+    MatButtonModule
   ],
   providers: [PortalService
     /*{

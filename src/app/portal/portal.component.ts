@@ -12,15 +12,12 @@ import {LibraryAdmin} from "../model/hall_models/admin.model";
 export class PortalComponent {
 books: Book[];
 publishers: Publisher[];
-admins: LibraryAdmin[];
   constructor(private service: PortalService) {
     this.books = [];
     this.publishers = [];
-    this.admins = [];
   }
 
   ngOnInit(): void{
-    this.getAdmins();
     this.getPublishers();
     this.getBooks();
   }
@@ -31,9 +28,5 @@ admins: LibraryAdmin[];
 
   getPublishers(){
     this.service.getPublishers().subscribe(result => this.publishers = result);
-  }
-
-  getAdmins(){
-    this.service.getAdmins().subscribe(result => this.admins = result);
   }
 }

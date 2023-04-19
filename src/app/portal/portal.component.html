@@ -1,20 +1,23 @@
-<mat-expansion-panel hideToggle>
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      Search
-    </mat-panel-title>
-    <mat-panel-description>
-      Type name or author to find book, you want
-    </mat-panel-description>
-  </mat-expansion-panel-header>
-  <mat-form-field appearance="outline" style="width: 100%; max-width: 100%;">
-    <mat-label>Search books</mat-label>
-    <input matInput cdkTextareaAutosize placeholder="War and peace">
-    <mat-icon matSuffix>library_books</mat-icon>
-    <mat-hint></mat-hint>
-  </mat-form-field>
-</mat-expansion-panel>
-<mat-grid-list cols=2>
+<div>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Search
+      </mat-panel-title>
+      <mat-panel-description>
+        Type name or author to find book, you want
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-form-field appearance="outline" style="width: 100%; max-width: 100%;">
+      <mat-label>Search books</mat-label>
+      <input matInput cdkTextareaAutosize placeholder="War and peace">
+      <mat-icon matSuffix>library_books</mat-icon>
+      <mat-hint></mat-hint>
+    </mat-form-field>
+  </mat-expansion-panel>
+</div>
+
+<!--<mat-grid-list cols=2>
   <mat-grid-tile *ngFor="let book of books">
     <mat-card>
       <mat-card-header>{{book.bookName}}</mat-card-header>
@@ -22,4 +25,4 @@
       <mat-card-footer>{{book.author}}</mat-card-footer>
     </mat-card>
   </mat-grid-tile>
-</mat-grid-list>
+</mat-grid-list>-->
