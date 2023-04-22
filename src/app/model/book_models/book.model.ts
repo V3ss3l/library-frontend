@@ -1,7 +1,7 @@
 import {Publisher} from "./publisher.model";
 
 export class Book{
-  id: number;
+  id?: number;
   bookName:string;
   author:string;
   ISBN:string;
@@ -14,12 +14,11 @@ export class Book{
   annotation : string;
   additionalInfo : string;
 
-  constructor(id?: number, bookName?: string, author?: string,
+  constructor(bookName?: string, author?: string,
               ISBN?: string, BBK?: string, UDK?: string,
               pagesCount?: number, yearOfPublishing?: number,
               publisher?: Publisher, language?: string,
               annotation?: string, additionalInfo?: string) {
-    this.id = id ?? 0;
     this.bookName = bookName ?? "";
     this.author = author ?? "";
     this.ISBN = ISBN ?? "";

@@ -1,24 +1,23 @@
-<mat-sidenav-container class = "example-container">
-  <mat-sidenav mode="side" opened class="sidenav">
-    <button mat-icon-button color="primary" label="Account">
-      <mat-icon>account_box</mat-icon>
-    </button>
-    <button mat-icon-button color="primary">
-      <mat-icon>account_circle</mat-icon>
-    </button>
-    <button mat-icon-button color="primary">
-      <mat-icon>book</mat-icon>
-    </button>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-tab-group>
-      <mat-tab label="Portal" class="mat-tab" >
-        <app-portal></app-portal>
-      </mat-tab>
-      <mat-tab label="Authorization" class="mat-tab">
-        <app-account></app-account>
-      </mat-tab>
-    </mat-tab-group>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon">
+    <mat-icon>account_box</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-menu #menu="matMenu">
+  <button mat-button><a routerLink="/portal">Portal</a></button>
+  <button mat-button><a routerLink="/account">Account</a></button>
+</mat-menu>
+<router-outlet></router-outlet>
+
+<!--nav mat-tab-nav-bar mat-stretch-tabs="false" mat-align-tabs="start" backgroundColor="primary" [tabPanel]="tabPanel">
+  <a mat-tab-link mat-align-tabs="end" routerLink="/portal">Portal</a>
+  <a mat-tab-link routerLink="/account">Account</a>
+</nav>
+<mat-tab-nav-panel #tabPanel>
+</mat-tab-nav-panel>-->
+
 

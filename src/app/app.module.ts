@@ -11,7 +11,6 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatInputModule} from "@angular/material/input";
 import {MatExpansionModule} from "@angular/material/expansion";
-import { AuthorizationComponent } from './account-directory/auth/authorization.component';
 import {PortalService} from "./portal.service";
 import {MatCardModule} from "@angular/material/card";
 import {MatGridListModule} from "@angular/material/grid-list";
@@ -19,12 +18,13 @@ import { AccountComponent } from './account-directory/account-component/account.
 import {FormsModule} from "@angular/forms";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatButtonModule} from "@angular/material/button";
+import {AppRoutingModule} from "./app-routing.module";
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
     AppComponent,
     PortalComponent,
-    AuthorizationComponent,
     AccountComponent
   ],
   imports: [
@@ -42,7 +42,9 @@ import {MatButtonModule} from "@angular/material/button";
     MatGridListModule,
     FormsModule,
     MatSidenavModule,
-    MatButtonModule
+    MatButtonModule,
+    AppRoutingModule,
+    MatDividerModule
   ],
   providers: [PortalService
     /*{

@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
-import {AuthorizationComponent} from "./account-directory/auth/authorization.component";
 import {AccountComponent} from "./account-directory/account-component/account.component";
+import {AppComponent} from "./app.component";
+import {PortalComponent} from "./portal/portal.component";
 
 const routes: Routes = [
-  {path: 'auth', component: AuthorizationComponent},
+  {path: 'portal', component: PortalComponent},
   {path: 'account', component: AccountComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'}
+  {path: '',redirectTo: '/portal', pathMatch: 'full'}
 ]
 
 @NgModule({

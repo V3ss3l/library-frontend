@@ -1,9 +1,9 @@
 export class Faculty{
-  id: number;
+  id?: number;
   facultyName: string;
 
-  constructor(id?: number, facultyName?: string){
-    this.id = id ?? 0;
+  constructor(facultyName?: string){
+
     this.facultyName = facultyName ?? "";
   }
 }

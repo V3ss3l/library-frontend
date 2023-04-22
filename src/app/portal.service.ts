@@ -21,4 +21,11 @@ export class PortalService {
     const uri = `http://localhost:8081/publisher`;
     return this.http.get<Publisher[]>(uri);
   }
+
+  addPublisher(): Observable<Publisher>{
+    let buff: Publisher;
+    buff = new Publisher("Popi", "Samara");
+    const uri = `http://localhost:8081/publisher`;
+    return this.http.post<Publisher>(uri, buff);
+  }
 }

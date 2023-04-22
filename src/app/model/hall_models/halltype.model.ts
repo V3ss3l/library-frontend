@@ -1,9 +1,8 @@
 export class HallType{
-  id: number;
+  id?: number;
   typeName: string;
 
-  constructor(id?: number, typeName?: string){
-    this.id = id ?? 0;
+  constructor(typeName?: string){
     this.typeName = typeName ?? "";
   }
 }

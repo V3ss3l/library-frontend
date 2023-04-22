@@ -20,6 +20,10 @@ publishers: Publisher[];
   ngOnInit(): void{
     this.getPublishers();
     this.getBooks();
+    this.service.addPublisher().subscribe(result => {
+      this.publishers.push(result);
+    });
+
   }
 
   getBooks(){

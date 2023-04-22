@@ -4,7 +4,7 @@ import {Role} from "./role.model";
 import {Formuliar} from "./formuliar.model";
 
 export class Reader{
-  id: number;
+  id?: number;
   lastName: string;
   firstName: string;
   surName: string;
@@ -19,8 +19,7 @@ export class Reader{
   role: Role;
   formuliar: Formuliar;
 
-  constructor(id?: number,
-  lastName?: string,
+  constructor(lastName?: string,
   firstName?: string,
   surName?: string,
   adress?: Adress,
@@ -33,7 +32,6 @@ export class Reader{
   expirationDate?: Date,
   role?: Role,
   formuliar?: Formuliar){
-    this.id = id ?? 0;
     this.lastName = lastName ?? "";
     this.firstName = firstName ?? "";
     this.surName = surName ?? "";

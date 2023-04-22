@@ -1,10 +1,9 @@
 export class Publisher{
-  id: number;
+  id?: number;
   name: string;
   city: string;
 
-  constructor(id?: number, name?: string, city?: string) {
-    this.id = id ?? 0;
+    constructor(name?: string, city?: string) {
     this.name = name ?? "";
     this.city = city ?? "";
   }
