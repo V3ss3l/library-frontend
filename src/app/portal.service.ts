@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 import {Book} from "./model/book_models/book.model";
 import {Publisher} from "./model/book_models/publisher.model";
 import {LibraryAdmin} from "./model/hall_models/admin.model";
+import {Role} from "./model/user_models/role.model";
 @Injectable({
   providedIn: 'root'
 })
@@ -22,10 +23,15 @@ export class PortalService {
     return this.http.get<Publisher[]>(uri);
   }
 
-  addPublisher(): Observable<Publisher>{
+  /*addPublisher(): Observable<Publisher>{
     let buff: Publisher;
     buff = new Publisher("Popi", "Samara");
     const uri = `http://localhost:8081/publisher`;
     return this.http.post<Publisher>(uri, buff);
+  }*/
+
+  getRoles(): Observable<Role[]>{
+    const uri = `http://localhost:8081/readerrole`;
+    return this.http.get<Role[]>(uri);
   }
 }

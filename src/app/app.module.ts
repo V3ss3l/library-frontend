@@ -20,6 +20,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatButtonModule} from "@angular/material/button";
 import {AppRoutingModule} from "./app-routing.module";
 import {MatDividerModule} from "@angular/material/divider";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -27,25 +28,26 @@ import {MatDividerModule} from "@angular/material/divider";
     PortalComponent,
     AccountComponent
   ],
-  imports: [
-    BrowserModule,
-    KeycloakAngularModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatMenuModule,
-    MatTabsModule,
-    MatInputModule,
-    MatExpansionModule,
-    HttpClientModule,
-    MatCardModule,
-    MatGridListModule,
-    FormsModule,
-    MatSidenavModule,
-    MatButtonModule,
-    AppRoutingModule,
-    MatDividerModule
-  ],
+    imports: [
+        BrowserModule,
+        KeycloakAngularModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatMenuModule,
+        MatTabsModule,
+        MatInputModule,
+        MatExpansionModule,
+        HttpClientModule,
+        MatCardModule,
+        MatGridListModule,
+        FormsModule,
+        MatSidenavModule,
+        MatButtonModule,
+        AppRoutingModule,
+        MatDividerModule,
+        MatSelectModule
+    ],
   providers: [PortalService
     /*{
       provide: APP_INITIALIZER,
