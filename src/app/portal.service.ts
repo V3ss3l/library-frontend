@@ -29,9 +29,4 @@ export class PortalService {
     const uri = `http://localhost:8081/publisher`;
     return this.http.post<Publisher>(uri, buff);
   }*/
-
-  getRoles(): Observable<Role[]>{
-    const uri = `http://localhost:8081/readerrole`;
-    return this.http.get<Role[]>(uri);
-  }
 }

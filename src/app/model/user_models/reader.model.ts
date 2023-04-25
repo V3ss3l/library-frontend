@@ -8,15 +8,15 @@ export class Reader{
   lastName: string;
   firstName: string;
   surName: string;
-  adress: Adress;
+  adress: Adress | null;
   registrationDate: Date;
   email: string;
   cellular: string;
   password: string;
   course: number;
-  group: Group;
-  receiptDate: Date;
-  expirationDate: Date;
+  group: Group | null;
+  receiptDate: Date | null;
+  expirationDate: Date | null;
   role: Role;
 
   constructor(lastName?: string,
@@ -35,15 +35,15 @@ export class Reader{
     this.lastName = lastName ?? "";
     this.firstName = firstName ?? "";
     this.surName = surName ?? "";
-    this.adress = adress ?? new Adress();
+    this.adress = adress ?? null;
     this.registrationDate = registrationDate ?? new Date();
     this.email = email ?? "";
     this.cellular = cellular ?? "";
     this.password = password ?? "";
     this.course = course ?? 0;
-    this.group = group ?? new Group();
-    this.receiptDate = receiptDate ?? new Date();
-    this.expirationDate = expirationDate ?? new Date();
+    this.group = group ?? null;
+    this.receiptDate = receiptDate ?? null;
+    this.expirationDate = expirationDate ?? null;
     this.role = role ?? new Role();
   }
 }
