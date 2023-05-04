@@ -21,12 +21,17 @@ import {MatButtonModule} from "@angular/material/button";
 import {AppRoutingModule} from "./app-routing.module";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatSelectModule} from "@angular/material/select";
+import {Ng2SearchPipeModule} from "ng2-search-filter";
+import { LoginComponent } from './account-directory/login/login.component';
+import { RegisterComponent } from './account-directory/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PortalComponent,
-    AccountComponent
+    AccountComponent,
+    LoginComponent,
+    RegisterComponent
   ],
     imports: [
         BrowserModule,
@@ -46,7 +51,8 @@ import {MatSelectModule} from "@angular/material/select";
         MatButtonModule,
         AppRoutingModule,
         MatDividerModule,
-        MatSelectModule
+        MatSelectModule,
+        Ng2SearchPipeModule
     ],
   providers: [PortalService
     /*{

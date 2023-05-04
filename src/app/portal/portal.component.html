@@ -8,21 +8,34 @@
         Type name or author to find book, you want
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <mat-form-field appearance="outline" style="width: 100%; max-width: 100%;">
+    <form>
+    <mat-form-field appearance="outline" style="width: 80%; max-width: 80%;">
       <mat-label>Search books</mat-label>
-      <input matInput cdkTextareaAutosize placeholder="War and peace">
+      <input matInput cdkTextareaAutosize placeholder="War and peace" name="search" [(ngModel)]="searchVar">
       <mat-icon matSuffix>library_books</mat-icon>
       <mat-hint></mat-hint>
     </mat-form-field>
+   <!-- <mat-form-field appearance="fill" style="width: 20%; max-width: 20%;">
+      <mat-label>Search options</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let option of searchOptions" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>-->
+    </form>
   </mat-expansion-panel>
 </div>
 
-<!--<mat-grid-list cols=2>
-  <mat-grid-tile *ngFor="let book of books">
+<mat-grid-list cols=2>
+  <mat-grid-tile *ngFor="let book of books |filter:searchVar">
     <mat-card>
-      <mat-card-header>{{book.bookName}}</mat-card-header>
+      <mat-card-header>
+      <h1>{{book.bookName}}</h1>
+        <h2>{{book.author}}</h2>
+      </mat-card-header>
       <mat-card-content>{{book.annotation}}</mat-card-content>
-      <mat-card-footer>{{book.author}}</mat-card-footer>
+      <mat-card-footer>{{book.ISBN}}</mat-card-footer>
     </mat-card>
   </mat-grid-tile>
-</mat-grid-list>-->
+</mat-grid-list>

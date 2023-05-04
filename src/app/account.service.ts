@@ -20,7 +20,7 @@ export class AccountService {
 
   addReader(reader: Reader): Observable<Reader>{
     const uri = `http://localhost:8081/reader`;
-    return this.http.post<Reader>(uri, reader);
+    return this.http.post<Reader>(uri, reader, {withCredentials: true});
   }
 
   getFormuliar(id: number): Observable<Formuliar>{

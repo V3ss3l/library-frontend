@@ -12,9 +12,12 @@ import {LibraryAdmin} from "../model/hall_models/admin.model";
 export class PortalComponent {
 books: Book[];
 publishers: Publisher[];
+searchOptions: string[];
+searchVar: string = "";
   constructor(private service: PortalService) {
     this.books = [];
     this.publishers = [];
+    this.searchOptions = ["Name", "Author", "Publisher"];
   }
 
   ngOnInit(): void{
