@@ -1,0 +1,9 @@
+.acc-div{
+  align-content: center;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 20%;
+  left: 45%;
+  margin: -50px 0 0 -50px;
+}

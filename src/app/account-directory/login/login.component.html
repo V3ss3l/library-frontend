@@ -1,0 +1,15 @@
+<div class="acc-div">
+<h1>Login</h1>
+<form #f = "ngForm" id = "login" (ngSubmit)="submit(f)">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>E-mail</mat-label>
+    <input matInput placeholder="Enter your email" name="email">
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput placeholder="Enter your password" value="" name="password" type="password">
+  </mat-form-field>
+  <button mat-raised-button color="primary" type = "submit" style="left:60%">Submit</button>
+  <button mat-button (click)="changeFormType()" style="left: 50%">Registration</button>
+</form>
+</div>

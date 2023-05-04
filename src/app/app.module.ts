@@ -24,6 +24,9 @@ import {MatSelectModule} from "@angular/material/select";
 import {Ng2SearchPipeModule} from "ng2-search-filter";
 import { LoginComponent } from './account-directory/login/login.component';
 import { RegisterComponent } from './account-directory/register/register.component';
+import { BookDetailsComponent } from './portal/book.details/book.details.component';
+import {MatTooltipModule} from "@angular/material/tooltip";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { RegisterComponent } from './account-directory/register/register.compone
     PortalComponent,
     AccountComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    BookDetailsComponent
   ],
     imports: [
         BrowserModule,
@@ -52,7 +56,9 @@ import { RegisterComponent } from './account-directory/register/register.compone
         AppRoutingModule,
         MatDividerModule,
         MatSelectModule,
-        Ng2SearchPipeModule
+        Ng2SearchPipeModule,
+        MatTooltipModule,
+        MatListModule
     ],
   providers: [PortalService
     /*{

@@ -18,6 +18,11 @@ export class PortalService {
     return this.http.get<Book[]>(uri);
   }
 
+  getBookById(id: string | null): Observable<Book> {
+    const uri = `http://localhost:8081/book/${id}`;
+    return this.http.get<Book>(uri);
+  }
+
   getPublishers(): Observable<Publisher[]> {
     const uri = `http://localhost:8081/publisher`;
     return this.http.get<Publisher[]>(uri);

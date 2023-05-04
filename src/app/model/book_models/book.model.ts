@@ -4,7 +4,7 @@ export class Book{
   id?: number;
   bookName:string;
   author:string;
-  ISBN:string;
+  isbn:string;
   BBK:string;
   UDK:string;
   pagesCount: number;
@@ -15,13 +15,13 @@ export class Book{
   additionalInfo : string;
 
   constructor(bookName?: string, author?: string,
-              ISBN?: string, BBK?: string, UDK?: string,
+             isbn?: string, BBK?: string, UDK?: string,
               pagesCount?: number, yearOfPublishing?: number,
               publisher?: Publisher, language?: string,
               annotation?: string, additionalInfo?: string) {
     this.bookName = bookName ?? "";
     this.author = author ?? "";
-    this.ISBN = ISBN ?? "";
+    this.isbn = isbn ?? "";
     this.BBK = BBK ?? "";
     this.UDK = UDK ?? "";
     this.pagesCount = pagesCount ?? 0;

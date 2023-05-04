@@ -3,6 +3,7 @@ import {PortalService} from "../portal.service";
 import {Publisher} from "../model/book_models/publisher.model";
 import {Book} from "../model/book_models/book.model";
 import {LibraryAdmin} from "../model/hall_models/admin.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-portal',
@@ -14,7 +15,7 @@ books: Book[];
 publishers: Publisher[];
 searchOptions: string[];
 searchVar: string = "";
-  constructor(private service: PortalService) {
+  constructor(private service: PortalService, private router: Router) {
     this.books = [];
     this.publishers = [];
     this.searchOptions = ["Name", "Author", "Publisher"];
@@ -23,9 +24,10 @@ searchVar: string = "";
   ngOnInit(): void{
     this.getPublishers();
     this.getBooks();
-
   }
-
+  openBookDetails(id: number){
+    this.router.navigate(['/portal', id]);
+  }
   getBooks(){
       this.service.getBooks().subscribe(result => this.books = result);
   }
