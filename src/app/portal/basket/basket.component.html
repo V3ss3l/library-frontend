@@ -1,0 +1,23 @@
+<mat-stepper orientation="vertical">
+  <mat-step>
+    <ng-template matStepLabel>Order</ng-template>
+    <ng-template matStepContent>
+      <mat-list>
+      </mat-list>
+      <button mat-button matStepperNext>Next</button>
+    </ng-template>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Adress</ng-template>
+    <ng-template matStepContent>
+      <p>This content was also rendered lazily</p>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </ng-template>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Finish</ng-template>
+    <p>This content was rendered eagerly</p>
+    <button mat-button matStepperPrevious>Back</button>
+  </mat-step>
+</mat-stepper>

@@ -27,6 +27,8 @@ import { RegisterComponent } from './account-directory/register/register.compone
 import { BookDetailsComponent } from './portal/book.details/book.details.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatListModule} from "@angular/material/list";
+import { BasketComponent } from './portal/basket/basket.component';
+import {MatStepperModule} from "@angular/material/stepper";
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import {MatListModule} from "@angular/material/list";
     AccountComponent,
     LoginComponent,
     RegisterComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    BasketComponent
   ],
     imports: [
         BrowserModule,
@@ -58,7 +61,8 @@ import {MatListModule} from "@angular/material/list";
         MatSelectModule,
         Ng2SearchPipeModule,
         MatTooltipModule,
-        MatListModule
+        MatListModule,
+        MatStepperModule
     ],
   providers: [PortalService
     /*{
