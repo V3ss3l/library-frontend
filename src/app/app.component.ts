@@ -9,7 +9,7 @@ import {Reader} from "./model/user_models/reader.model";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'library-frontend';
+  title = 'Library-app';
   constructor() {
   }
 }

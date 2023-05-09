@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, Output} from '@angular/core';
 import {AccountService} from "../../account.service";
-import {Form} from "@angular/forms";
+import {Form, NgForm} from "@angular/forms";
 import {Router} from "@angular/router";
+import {LoginInfo} from "./LoginInfo";
+import {Reader} from "../../model/user_models/reader.model";
 
 @Component({
   selector: 'app-login',
@@ -9,17 +11,23 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  isLoggenIN: boolean = false;
+  public isLoggenIN: boolean = false;
   constructor(private service: AccountService, private router: Router) {
 
   }
 
-  submit(f: Form){
-    /*if(this.currentFormuliar?.reader.email === f.value.email
-      && this.currentFormuliar?.reader.password === f.value.password) {
-      this.isLoggedIN = true;
-      this.router.navigate(['/']);
-    }*/
+  ngOnInit(): void {
+  }
+
+  submit(r: NgForm){
+    let json = r.value;
+    console.log(json);
+    let info = new LoginInfo(json.email, json.password);
+    this.service.Login(info).subscribe(result => {
+      console.log(result);
+      this.isLoggenIN = true;
+      this.router.navigate(['account'], {state: {flag: this.isLoggenIN, formuliar: result}})
+    })
   }
 
   changeFormType(){

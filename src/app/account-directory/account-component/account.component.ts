@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Reader} from "../../model/user_models/reader.model";
 import {Role} from "../../model/user_models/role.model";
 import {PortalService} from "../../portal.service";
 import {AccountService} from "../../account.service";
 import {Formuliar} from "../../model/user_models/formuliar.model";
 import {NgForm} from "@angular/forms";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AppComponent} from "../../app.component";
 
 @Component({
@@ -14,12 +14,16 @@ import {AppComponent} from "../../app.component";
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent {
-  isLoggedIN: boolean = false;
-  constructor(private service: AccountService, private router: Router) {
+  isLoggedIn: boolean = false;
+  currentFormuliar!: Formuliar;
+  constructor(private service: AccountService, private router: Router, private activRoute: ActivatedRoute) {
+    console.log(this.router.getCurrentNavigation()?.extras.state);
   }
 
 
   ngOnInit(): void {
-    if(!this.isLoggedIN) this.router.navigate(['login']);
+    this.isLoggedIn = history.state.isLoggedIn;
+    this.currentFormuliar = history.state.formuliar;
+    /*if(!this.isLoggedIn) this.router.navigate(['login'])*/
   }
 }

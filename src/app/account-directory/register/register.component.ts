@@ -22,6 +22,7 @@ export class RegisterComponent {
   }
   submit(f: NgForm){
     let json = f.value;
+    console.log(json);
     let newReader: Reader = new Reader();
     newReader.lastName = json.lastName;
     newReader.firstName = json.firstName;

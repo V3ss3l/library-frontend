@@ -5,6 +5,7 @@ import {Reader} from "./model/user_models/reader.model";
 import {Book} from "./model/book_models/book.model";
 import {Formuliar} from "./model/user_models/formuliar.model";
 import {Role} from "./model/user_models/role.model";
+import {LoginInfo} from "./account-directory/login/LoginInfo";
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,11 @@ export class AccountService {
     const uri = `http://localhost:8081/formuliar`;
     let formulair: Formuliar = new Formuliar(new Date(), 0, reader);
     return this.http.post<Formuliar>(uri, formulair);
+  }
+
+  Login(info: LoginInfo): Observable<Formuliar> {
+    const uri = `http://localhost:8081/formuliar/login`;
+    return this.http.post<Formuliar>(uri, info);
   }
 
   getRoles(): Observable<Role[]>{

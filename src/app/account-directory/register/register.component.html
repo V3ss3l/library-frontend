@@ -2,7 +2,7 @@
   <mat-card style="border-radius: 5px">
     <mat-card-title style="color: aliceblue">Register</mat-card-title>
     <mat-card-content>
-      <form #f = "ngForm" id = "registration" (ngSubmit)="submit(f)">
+      <form #r = "ngForm" id = "registration" (ngSubmit)="submit(r)">
         <mat-form-field class="example-full-width" appearance="fill" hideRequiredMarker = "false">
           <mat-label>First Name</mat-label>
           <input matInput placeholder="Enter your first name" name="firstName" ngModel required>
