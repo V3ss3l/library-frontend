@@ -1,15 +1,31 @@
-<mat-grid-list cols="2" rowHeight="4:3">
-  <mat-grid-tile>
-    <mat-grid-tile-header>Info</mat-grid-tile-header>
-    <mat-list>
-      <mat-list-item name="bookName">Book name: {{currentBook.bookName}}</mat-list-item>
-      <mat-list-item name="bookAuthor">Book author: {{currentBook.author}}</mat-list-item>
-      <mat-list-item name="publisher">Publisher: {{currentBook.publisher.name}}</mat-list-item>
-      <mat-list-item name="bookLanguage">Language: {{currentBook.language}}</mat-list-item>
-      <mat-list-item name="bookPageCount">Page count: {{currentBook.pagesCount}}</mat-list-item>
-      <mat-list-item name="bookPageCount">ISBN: {{currentBook.isbn}}</mat-list-item>
-    </mat-list>
-  </mat-grid-tile>
+<div class="bookInfo_card">
+  <mat-card>
+    <mat-card-title>Информация о книге</mat-card-title>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item name="bookName">Название книги: {{currentBook.bookName}}</mat-list-item>
+        <mat-list-item name="bookAuthor">Авторы: {{currentBook.author}}</mat-list-item>
+        <mat-list-item name="publisher">Издатель: {{currentBook.publisher.name}}</mat-list-item>
+        <mat-list-item name="city">Город: {{currentBook.publisher.city}}</mat-list-item>
+        <mat-list-item name="yearOfPublishing">Год издания: {{currentBook.yearOfPublishing}}</mat-list-item>
+        <mat-list-item name="bookLanguage">Язык: {{currentBook.language}}</mat-list-item>
+        <mat-list-item name="bookPageCount">Количество страниц: {{currentBook.pagesCount}}</mat-list-item>
+        <mat-list-item name="bookISBN">ISBN: {{currentBook.isbn}}</mat-list-item>
+        <mat-list-item name="bookBBK">BBK: {{currentBook.bbk}}</mat-list-item>
+        <mat-list-item name="bookUDK">UDK: {{currentBook.udk}}</mat-list-item>
+        <mat-list-item>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Аннотация</mat-panel-title>
+            </mat-expansion-panel-header>
+            Аннотация: {{currentBook.annotation}}
+          </mat-expansion-panel>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
+
   <!--"id": 15,
   "bookName": "Ужас Данвича",
   "author": "Говард Филиппс Лавкрафт",
@@ -26,5 +42,4 @@
   "isbn": "978-5-389-22398-1",
   "bbk": null,
   "udk": null-->
-</mat-grid-list>
 

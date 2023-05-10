@@ -5,8 +5,8 @@ export class Book{
   bookName:string;
   author:string;
   isbn:string;
-  BBK:string;
-  UDK:string;
+  bbk:string;
+  udk:string;
   pagesCount: number;
   yearOfPublishing: number;
   publisher : Publisher;
@@ -22,8 +22,8 @@ export class Book{
     this.bookName = bookName ?? "";
     this.author = author ?? "";
     this.isbn = isbn ?? "";
-    this.BBK = BBK ?? "";
-    this.UDK = UDK ?? "";
+    this.bbk = BBK ?? "";
+    this.udk = UDK ?? "";
     this.pagesCount = pagesCount ?? 0;
     this.yearOfPublishing = yearOfPublishing ?? 0;
     this.publisher = publisher ?? new Publisher();

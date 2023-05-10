@@ -21,7 +21,7 @@
 
 <mat-grid-list cols=2>
   <mat-grid-tile *ngFor="let book of books |filter:searchVar">
-    <mat-card>
+    <mat-card class="book_card">
       <mat-card-title>{{book.bookName}}</mat-card-title>
       <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
       <mat-card-content>{{book.annotation}}</mat-card-content>

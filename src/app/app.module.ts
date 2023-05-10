@@ -22,23 +22,23 @@ import {AppRoutingModule} from "./app-routing.module";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatSelectModule} from "@angular/material/select";
 import {Ng2SearchPipeModule} from "ng2-search-filter";
-import { LoginComponent } from './account-directory/login/login.component';
 import { RegisterComponent } from './account-directory/register/register.component';
 import { BookDetailsComponent } from './portal/book.details/book.details.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatListModule} from "@angular/material/list";
 import { BasketComponent } from './portal/basket/basket.component';
 import {MatStepperModule} from "@angular/material/stepper";
+import { LoginComponent } from './account-directory/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PortalComponent,
     AccountComponent,
-    LoginComponent,
     RegisterComponent,
     BookDetailsComponent,
-    BasketComponent
+    BasketComponent,
+    LoginComponent
   ],
     imports: [
         BrowserModule,

@@ -2,3 +2,9 @@
   flex: 1 1 auto;
 }
 
+.book_card {
+  min-height: 100px;
+  max-height: 400px;
+  width: 250px;
+}
+

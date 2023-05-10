@@ -1,5 +1,5 @@
 export class LibraryAdmin{
-  adminId?: number;
+  id?: number;
   lastName: string;
   firstName: string;
   surName: string;

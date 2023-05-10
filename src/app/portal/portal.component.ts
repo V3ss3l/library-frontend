@@ -13,12 +13,10 @@ import {Router} from "@angular/router";
 export class PortalComponent {
 books: Book[];
 publishers: Publisher[];
-searchOptions: string[];
 searchVar: string = "";
   constructor(private service: PortalService, private router: Router) {
     this.books = [];
     this.publishers = [];
-    this.searchOptions = ["Name", "Author", "Publisher"];
   }
 
   ngOnInit(): void{

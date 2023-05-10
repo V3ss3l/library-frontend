@@ -5,9 +5,9 @@ import {AccountComponent} from "./account-directory/account-component/account.co
 import {AppComponent} from "./app.component";
 import {PortalComponent} from "./portal/portal.component";
 import {BookDetailsComponent} from "./portal/book.details/book.details.component";
-import {LoginComponent} from "./account-directory/login/login.component";
 import {RegisterComponent} from "./account-directory/register/register.component";
 import {BasketComponent} from "./portal/basket/basket.component";
+import {LoginComponent} from "./account-directory/login/login.component";
 
 const routes: Routes = [
   {path: 'portal', component: PortalComponent},

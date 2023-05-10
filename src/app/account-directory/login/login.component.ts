@@ -1,9 +1,10 @@
-import {Component, Output} from '@angular/core';
-import {AccountService} from "../../account.service";
-import {Form, NgForm} from "@angular/forms";
-import {Router} from "@angular/router";
+import { Component } from '@angular/core';
+import {NgForm} from "@angular/forms";
 import {LoginInfo} from "./LoginInfo";
-import {Reader} from "../../model/user_models/reader.model";
+import {Formuliar} from "../../model/user_models/formuliar.model";
+import {LibraryAdmin} from "../../model/hall_models/admin.model";
+import {AccountService} from "../../account.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -11,26 +12,45 @@ import {Reader} from "../../model/user_models/reader.model";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  public isLoggenIN: boolean = false;
+  isAdminLogin!: boolean;
   constructor(private service: AccountService, private router: Router) {
-
   }
 
   ngOnInit(): void {
+    this.isAdminLogin = this.getIsAdminLogin();
   }
 
-  submit(r: NgForm){
-    let json = r.value;
+  submit(f: NgForm){
+    let json = f.value;
     console.log(json);
     let info = new LoginInfo(json.email, json.password);
-    this.service.Login(info).subscribe(result => {
-      console.log(result);
-      this.isLoggenIN = true;
-      this.router.navigate(['account'], {state: {flag: this.isLoggenIN, formuliar: result}})
-    })
+    if(this.isAdminLogin){
+      this.service.LoginAdmin(info).subscribe(result => {
+        console.log(result);
+        this.service.currentAdmin = result;
+        this.service.isLoggedIn = true;
+        this.router.navigate(['account']);
+      })
+    } else if(!this.isAdminLogin){
+      this.service.LoginReader(info).subscribe(result => {
+        console.log(result);
+        this.service.currentFormuliar = result;
+        this.service.isLoggedIn = true;
+        this.router.navigate(['account']);
+      })
+    }
   }
 
-  changeFormType(){
+  changeFormToRegistration(){
     this.router.navigate(['register']);
+  }
+
+  changeFormTypeToAdmin(flag: boolean) {
+    this.service.isAdminLogin = flag;
+    this.isAdminLogin = this.getIsAdminLogin();
+  }
+
+  getIsAdminLogin(){
+    return this.service.isAdminLogin;
   }
 }

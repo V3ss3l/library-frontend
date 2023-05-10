@@ -1,19 +1,41 @@
 <div class="acc-div">
-  <mat-card style="border-radius: 5px">
-    <mat-card-title style="color: aliceblue">Login</mat-card-title>
-    <mat-card-content>
-      <form #f = "ngForm" id = "registration" (ngSubmit)="submit(f)">
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>E-mail</mat-label>
-          <input matInput placeholder="Enter your email" name="email" ngModel required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Password</mat-label>
-          <input matInput placeholder="Enter your password" value="" name="password" type="password" ngModel required>
-        </mat-form-field>
-        <button mat-raised-button color="primary" type = "submit">Submit</button>
-        <button mat-button (click) = "changeFormType()">Back</button>
-      </form>
-    </mat-card-content>
-  </mat-card>
+  <ng-template [ngIf]="!isAdminLogin">
+    <mat-card style="border-radius: 5px">
+      <mat-card-title style="color: aliceblue">Login</mat-card-title>
+      <mat-card-content>
+        <form #f_1 = "ngForm" id = "readerLogin" (ngSubmit)="submit(f_1)">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="Enter your email" name="email" ngModel required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Enter your password" value="" name="password" type="password" ngModel required>
+          </mat-form-field>
+          <button mat-raised-button color="primary" type = "submit">Submit</button>
+          <button mat-button (click) = "changeFormToRegistration()">Registration</button>
+          <button mat-button (click) = "changeFormTypeToAdmin(true)">Login As Admin</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </ng-template>
+  <ng-template [ngIf]="isAdminLogin">
+    <mat-card style="border-radius: 5px">
+      <mat-card-title style="color: aliceblue">Login as Admin</mat-card-title>
+      <mat-card-content>
+        <form #f_2 = "ngForm" id = "adminLogin" (ngSubmit)="submit(f_2)">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="Enter your login" name="email" ngModel required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Enter your password" value="" name="password" type="password" ngModel required>
+          </mat-form-field>
+          <button mat-raised-button color="primary" type = "submit">Submit</button>
+          <button mat-button (click) = "changeFormTypeToAdmin(false)">Login As Reader</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </ng-template>
 </div>
