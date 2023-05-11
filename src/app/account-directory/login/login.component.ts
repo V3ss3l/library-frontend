@@ -5,6 +5,7 @@ import {Formuliar} from "../../model/user_models/formuliar.model";
 import {LibraryAdmin} from "../../model/hall_models/admin.model";
 import {AccountService} from "../../account.service";
 import {Router} from "@angular/router";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent {
   isAdminLogin!: boolean;
-  constructor(private service: AccountService, private router: Router) {
+  constructor(private service: AccountService, private router: Router, private _snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
@@ -26,17 +27,27 @@ export class LoginComponent {
     let info = new LoginInfo(json.email, json.password);
     if(this.isAdminLogin){
       this.service.LoginAdmin(info).subscribe(result => {
-        console.log(result);
-        this.service.currentAdmin = result;
-        this.service.isLoggedIn = true;
-        this.router.navigate(['account']);
+        if(result){
+          this._snackBar.open('Неправильно введены данные пользователя! Попробуйте снова!', 'OK');
+        }
+        else {
+          console.log(result);
+          this.service.currentAdmin = result;
+          this.service.isLoggedIn = true;
+          this.router.navigate(['account']);
+        }
       })
     } else if(!this.isAdminLogin){
       this.service.LoginReader(info).subscribe(result => {
-        console.log(result);
-        this.service.currentFormuliar = result;
-        this.service.isLoggedIn = true;
-        this.router.navigate(['account']);
+        if(result === null){
+          this._snackBar.open('Неправильно введены данные пользователя! Попробуйте снова!', 'OK');
+        }
+        else {
+          console.log(result);
+          this.service.currentFormuliar = result;
+          this.service.isLoggedIn = true;
+          this.router.navigate(['account']);
+        }
       })
     }
   }

@@ -14,15 +14,22 @@
         <mat-list-item name="bookBBK">BBK: {{currentBook.bbk}}</mat-list-item>
         <mat-list-item name="bookUDK">UDK: {{currentBook.udk}}</mat-list-item>
         <mat-list-item>
-          <mat-expansion-panel>
+          <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
               <mat-panel-title>Аннотация</mat-panel-title>
             </mat-expansion-panel-header>
-            Аннотация: {{currentBook.annotation}}
+            {{currentBook.annotation}}
           </mat-expansion-panel>
         </mat-list-item>
       </mat-list>
     </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-footer>
+      <mat-label>Наличие в пунктах выдачи:</mat-label>
+      <mat-list *ngFor="let storage of listOfStorages">
+        <mat-list-item>{{storage.hall.hallName}}; {{storage.hall.housing.housingName}}; {{storage.hall.housing.adress.street}}, {{storage.hall.housing.adress.building}}</mat-list-item>
+      </mat-list>
+    </mat-card-footer>
   </mat-card>
 </div>
 

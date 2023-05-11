@@ -1,11 +1,13 @@
+import {Book} from "./book.model";
+
 export class BookDelivery{
   id?: number;
-  bookItemId: number;
+  book: Book;
   dateOfGet: Date;
   dateOfExpire: Date;
 
-  constructor(bookItemId?: number, dateOfGet?: Date, dateOfExpire?: Date) {
-    this.bookItemId = bookItemId ?? 0;
+  constructor(book?: Book, dateOfGet?: Date, dateOfExpire?: Date) {
+    this.book = book ?? new Book();
     this.dateOfGet = dateOfGet ?? new Date();
     this.dateOfExpire = dateOfExpire ?? new Date();
   }

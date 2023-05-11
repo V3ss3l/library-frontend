@@ -1,6 +1,6 @@
 .bookInfo_card {
   align-content: center;
-  width: auto;
+  max-width: 1500px;
   height: auto;
   position: absolute;
   top: 20%;

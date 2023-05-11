@@ -4,6 +4,7 @@ import {Publisher} from "../model/book_models/publisher.model";
 import {Book} from "../model/book_models/book.model";
 import {LibraryAdmin} from "../model/hall_models/admin.model";
 import {Router} from "@angular/router";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-portal',
@@ -14,7 +15,7 @@ export class PortalComponent {
 books: Book[];
 publishers: Publisher[];
 searchVar: string = "";
-  constructor(private service: PortalService, private router: Router) {
+  constructor(private service: PortalService, private router: Router, private _snackBar: MatSnackBar) {
     this.books = [];
     this.publishers = [];
   }
@@ -23,6 +24,12 @@ searchVar: string = "";
     this.getPublishers();
     this.getBooks();
   }
+
+  transferBookToBasket(book: Book) {
+    this.service.currentOrderedBook = book;
+    this._snackBar.open('Книга была добавлена в корзину!', 'Ok');
+  }
+
   openBookDetails(id: number){
     this.router.navigate(['/portal', id]);
   }

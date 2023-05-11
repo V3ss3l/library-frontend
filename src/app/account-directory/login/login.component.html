@@ -1,7 +1,7 @@
 <div class="acc-div">
   <ng-template [ngIf]="!isAdminLogin">
     <mat-card style="border-radius: 5px">
-      <mat-card-title style="color: aliceblue">Login</mat-card-title>
+      <mat-card-title>Login</mat-card-title>
       <mat-card-content>
         <form #f_1 = "ngForm" id = "readerLogin" (ngSubmit)="submit(f_1)">
           <mat-form-field class="example-full-width" appearance="fill">
@@ -14,14 +14,14 @@
           </mat-form-field>
           <button mat-raised-button color="primary" type = "submit">Submit</button>
           <button mat-button (click) = "changeFormToRegistration()">Registration</button>
-          <button mat-button (click) = "changeFormTypeToAdmin(true)">Login As Admin</button>
+          <button mat-button (click) = "changeFormTypeToAdmin(true)" style="left: 40%">Login As Admin</button>
         </form>
       </mat-card-content>
     </mat-card>
   </ng-template>
   <ng-template [ngIf]="isAdminLogin">
     <mat-card style="border-radius: 5px">
-      <mat-card-title style="color: aliceblue">Login as Admin</mat-card-title>
+      <mat-card-title>Login as Admin</mat-card-title>
       <mat-card-content>
         <form #f_2 = "ngForm" id = "adminLogin" (ngSubmit)="submit(f_2)">
           <mat-form-field class="example-full-width" appearance="fill">
@@ -33,7 +33,7 @@
             <input matInput placeholder="Enter your password" value="" name="password" type="password" ngModel required>
           </mat-form-field>
           <button mat-raised-button color="primary" type = "submit">Submit</button>
-          <button mat-button (click) = "changeFormTypeToAdmin(false)">Login As Reader</button>
+          <button mat-button (click) = "changeFormTypeToAdmin(false)" style="left: 40%">Login As Reader</button>
         </form>
       </mat-card-content>
     </mat-card>

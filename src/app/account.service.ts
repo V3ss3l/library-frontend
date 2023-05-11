@@ -7,6 +7,8 @@ import {Formuliar} from "./model/user_models/formuliar.model";
 import {Role} from "./model/user_models/role.model";
 import {LoginInfo} from "./account-directory/login/LoginInfo";
 import {LibraryAdmin} from "./model/hall_models/admin.model";
+import {StoragesModel} from "./model/book_models/storages.model";
+import {BookDelivery} from "./model/book_models/BookDelivery";
 
 @Injectable({
   providedIn: 'root'
@@ -66,6 +68,16 @@ export class AccountService {
   getAdmin(id: any): Observable<LibraryAdmin>{
     const uri = `http://localhost:8081/libraryadmin/${id}`;
     return this.http.get<LibraryAdmin>(uri);
+  }
+
+  getStoragesByAdmin(id: any): Observable<StoragesModel[]> {
+    const uri = `http://localhost:8081/libraryadmin/${id}/storages`;
+    return this.http.get<StoragesModel[]>(uri);
+  }
+
+  getOrdersByReader(id: any): Observable<BookDelivery[]> {
+    const uri = `http://localhost:8081/formuliar/${id}/orders`;
+    return this.http.get<BookDelivery[]>(uri);
   }
 
   addFormuliar(reader: Reader): Observable<Formuliar>{

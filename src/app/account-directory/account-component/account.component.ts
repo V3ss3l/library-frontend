@@ -9,6 +9,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {AppComponent} from "../../app.component";
 import {LoginInfo} from "../login/LoginInfo";
 import {LibraryAdmin} from "../../model/hall_models/admin.model";
+import {StoragesModel} from "../../model/book_models/storages.model";
+import {BookDelivery} from "../../model/book_models/BookDelivery";
 
 @Component({
   selector: 'app-account',
@@ -18,8 +20,11 @@ import {LibraryAdmin} from "../../model/hall_models/admin.model";
 export class AccountComponent {
   currentFormuliar!: Formuliar;
   currentAdmin!: LibraryAdmin;
+  listOfStorages!: StoragesModel[];
+  listOfOrders!: BookDelivery[];
   isLoggedIn: boolean = false;
   isAdminLogin: boolean = false;
+  displayedColumns: string[] = ['id', 'package_id', 'book_id', 'book_name', 'count_books', 'storage_id', 'hall'];
   constructor(private service: AccountService, private router: Router) {
 
   }
@@ -29,8 +34,14 @@ export class AccountComponent {
     this.isLoggedIn = this.getisLoggedIn();
     this.isAdminLogin = this.getIsAdminLogin();
     if (this.isLoggedIn) {
-      if(this.isAdminLogin) this.currentAdmin = this.getCurrentAdmin();
-      else this.currentFormuliar = this.getCurrentFormuliar();
+      if(this.isAdminLogin) {
+        this.currentAdmin = this.getCurrentAdmin();
+        this.getListOfStoragesByAdmin();
+      }
+      else {
+        this.currentFormuliar = this.getCurrentFormuliar();
+        this.getListOfOrdersByReader();
+      }
     } else this.router.navigate(['login']);
   }
 
@@ -42,6 +53,14 @@ export class AccountComponent {
 
   getCurrentAdmin(){
     return this.service.currentAdmin;
+  }
+
+  getListOfStoragesByAdmin(){
+    this.service.getStoragesByAdmin(this.currentAdmin.id).subscribe(result => this.listOfStorages = result);
+  }
+
+  getListOfOrdersByReader(){
+    this.service.getOrdersByReader(this.currentFormuliar.id).subscribe(result => this.listOfOrders = result)
   }
 
   getCurrentFormuliar(){

@@ -26,10 +26,10 @@
       <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
       <mat-card-content>{{book.annotation}}</mat-card-content>
       <mat-divider></mat-divider>
-      <mat-card-actions >
+      <mat-card-actions>
         <button mat-icon-button matTooltip="More information about the book" (click)="openBookDetails(book.id)"><mat-icon>expand_more</mat-icon></button>
         <span class="spacer-for-cards"></span>
-        <button mat-icon-button matTooltip="Adding this book to a cart"><mat-icon>library_add</mat-icon></button>
+        <button mat-icon-button matTooltip="Adding this book to a cart" (click)="transferBookToBasket(book)"><mat-icon>library_add</mat-icon></button>
       </mat-card-actions>
       <mat-card-footer></mat-card-footer>
     </mat-card>

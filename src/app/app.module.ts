@@ -29,6 +29,10 @@ import {MatListModule} from "@angular/material/list";
 import { BasketComponent } from './portal/basket/basket.component';
 import {MatStepperModule} from "@angular/material/stepper";
 import { LoginComponent } from './account-directory/login/login.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -40,30 +44,34 @@ import { LoginComponent } from './account-directory/login/login.component';
     BasketComponent,
     LoginComponent
   ],
-    imports: [
-        BrowserModule,
-        KeycloakAngularModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatMenuModule,
-        MatTabsModule,
-        MatInputModule,
-        MatExpansionModule,
-        HttpClientModule,
-        MatCardModule,
-        MatGridListModule,
-        FormsModule,
-        MatSidenavModule,
-        MatButtonModule,
-        AppRoutingModule,
-        MatDividerModule,
-        MatSelectModule,
-        Ng2SearchPipeModule,
-        MatTooltipModule,
-        MatListModule,
-        MatStepperModule
-    ],
+  imports: [
+    BrowserModule,
+    KeycloakAngularModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
+    MatTabsModule,
+    MatInputModule,
+    MatExpansionModule,
+    HttpClientModule,
+    MatCardModule,
+    MatGridListModule,
+    FormsModule,
+    MatSidenavModule,
+    MatButtonModule,
+    AppRoutingModule,
+    MatDividerModule,
+    MatSelectModule,
+    Ng2SearchPipeModule,
+    MatTooltipModule,
+    MatListModule,
+    MatStepperModule,
+    MatTableModule,
+    MatSnackBarModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+  ],
   providers: [PortalService
     /*{
       provide: APP_INITIALIZER,

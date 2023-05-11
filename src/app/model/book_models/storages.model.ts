@@ -8,7 +8,7 @@ export class StoragesModel {
   bookPackage: Package;
   book: Book;
   countBooks: number;
-  storage: Storage;
+  bookStorage: Storage;
   hall: Hall;
 
   constructor(bookPackage?: Package, book?: Book,
@@ -16,7 +16,7 @@ export class StoragesModel {
     this.bookPackage = bookPackage ?? new Package();
     this.book = book ?? new Book();
     this.countBooks = countBooks ?? 0;
-    this.storage = storage ?? new Storage();
+    this.bookStorage = storage ?? new Storage();
     this.hall = hall ?? new Hall();
   }
 }
