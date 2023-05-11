@@ -1,9 +1,9 @@
 
 <ng-template [ngIf]="!isAdminLogin && !(currentFormuliar === undefined)">
-  <button mat-raised-button (click)="LogOut()" style="float:right">Log out</button>
+  <button mat-raised-button (click)="LogOut()" style="float:right">LogoOut</button>
   <div class="reader-acc">
     <mat-card>
-      <mat-card-title>{{currentFormuliar.reader.lastName}} {{currentFormuliar.reader.firstName}}</mat-card-title>
+      <mat-card-title style="padding-left: 15px">{{currentFormuliar.reader.lastName}} {{currentFormuliar.reader.firstName}}</mat-card-title>
       <mat-card-content>
         <mat-list>
           <mat-list-item>Количество просроченных книг: {{currentFormuliar.countOverdueBooks}}</mat-list-item>
@@ -38,15 +38,21 @@
           </mat-expansion-panel>
         </mat-list>
       </mat-card-content>
+      <mat-card-footer>
+        <mat-label>Ваши заказы:</mat-label>
+        <mat-list>
+          <mat-list-item *ngFor="let order of listOfOrders">{{order.book.bookName}} - {{order.dateOfGet}} - {{order.dateOfExpire}}</mat-list-item>
+        </mat-list>
+      </mat-card-footer>
     </mat-card>
   </div>
 </ng-template>
 
 <ng-template [ngIf]="isAdminLogin && !(currentAdmin === undefined)">
-  <button mat-raised-button (click)="LogOut()" style="float: right">Log out</button>
+  <button mat-raised-button (click)="LogOut()" style="float: right">LogOut</button>
   <div class="admin-acc">
     <mat-card>
-      <mat-card-title>{{currentAdmin.lastName}} {{currentAdmin.firstName}}</mat-card-title>
+      <mat-card-title style="padding-left: 15px">{{currentAdmin.lastName}} {{currentAdmin.firstName}}</mat-card-title>
       <mat-card-content>
         <table mat-table [dataSource]="listOfStorages" class="mat-elevation-z8">
 

@@ -1,6 +1,6 @@
 <div class="bookInfo_card">
   <mat-card>
-    <mat-card-title>Информация о книге</mat-card-title>
+    <mat-card-title style="padding-left: 15px">Информация о книге</mat-card-title>
     <mat-card-content>
       <mat-list>
         <mat-list-item name="bookName">Название книги: {{currentBook.bookName}}</mat-list-item>
@@ -13,23 +13,21 @@
         <mat-list-item name="bookISBN">ISBN: {{currentBook.isbn}}</mat-list-item>
         <mat-list-item name="bookBBK">BBK: {{currentBook.bbk}}</mat-list-item>
         <mat-list-item name="bookUDK">UDK: {{currentBook.udk}}</mat-list-item>
-        <mat-list-item>
-          <mat-expansion-panel hideToggle>
+        </mat-list>
+        <mat-expansion-panel hideToggle style="max-height: 200px" style="padding-bottom: 15px">
             <mat-expansion-panel-header>
               <mat-panel-title>Аннотация</mat-panel-title>
             </mat-expansion-panel-header>
             {{currentBook.annotation}}
           </mat-expansion-panel>
-        </mat-list-item>
-      </mat-list>
     </mat-card-content>
     <mat-divider></mat-divider>
-    <mat-card-footer>
-      <mat-label>Наличие в пунктах выдачи:</mat-label>
-      <mat-list *ngFor="let storage of listOfStorages">
-        <mat-list-item>{{storage.hall.hallName}}; {{storage.hall.housing.housingName}}; {{storage.hall.housing.adress.street}}, {{storage.hall.housing.adress.building}}</mat-list-item>
-      </mat-list>
-    </mat-card-footer>
+      <mat-card-footer>
+        <mat-label>Наличие в пунктах выдачи:</mat-label>
+        <mat-list *ngFor="let storage of listOfStorages">
+          <mat-list-item>{{storage.hall.hallName}}; {{storage.hall.housing.housingName}}; {{storage.hall.housing.adress.street}}, {{storage.hall.housing.adress.building}}</mat-list-item>
+        </mat-list>
+      </mat-card-footer>
   </mat-card>
 </div>
 

@@ -1,18 +1,18 @@
 <div class="acc-div">
   <mat-card style="border-radius: 5px">
-    <mat-card-title style="color: aliceblue">Register</mat-card-title>
+    <mat-card-title style="padding-left: 15px">Регистрация</mat-card-title>
     <mat-card-content>
       <form #r = "ngForm" id = "registration" (ngSubmit)="submit(r)">
         <mat-form-field class="example-full-width" appearance="fill" hideRequiredMarker = "false">
-          <mat-label>First Name</mat-label>
+          <mat-label>Фамилия</mat-label>
           <input matInput placeholder="Enter your first name" name="firstName" ngModel required>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill" >
-          <mat-label>Last Name</mat-label>
+          <mat-label>Имя</mat-label>
           <input matInput placeholder="Enter your last name" name="lastName" ngModel required>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Surname (optional)</mat-label>
+          <mat-label>Отчество</mat-label>
           <input matInput placeholder="Enter your surname" name="surname" ngModel>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill">
@@ -20,7 +20,7 @@
           <input matInput placeholder="Enter your email" name="email" ngModel required>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Mobile phone</mat-label>
+          <mat-label>Номер телефона</mat-label>
           <input matInput placeholder="Enter your phone number" name="cellular" ngModel required>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill">
@@ -30,11 +30,11 @@
           </mat-select>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Password</mat-label>
+          <mat-label>Пароль</mat-label>
           <input matInput placeholder="Enter your password" value="" name="password" type="password" ngModel required>
         </mat-form-field>
-          <button mat-raised-button color="primary" type = "submit">Submit</button>
-          <button mat-button (click) = "changeFormType()">Back</button>
+          <button mat-raised-button color="primary" type = "submit">Подтверждение</button>
+          <button mat-button (click) = "changeFormType()">Назад</button>
       </form>
     </mat-card-content>
   </mat-card>

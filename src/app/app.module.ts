@@ -15,7 +15,7 @@ import {PortalService} from "./portal.service";
 import {MatCardModule} from "@angular/material/card";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { AccountComponent } from './account-directory/account-component/account.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatButtonModule} from "@angular/material/button";
 import {AppRoutingModule} from "./app-routing.module";
@@ -44,34 +44,35 @@ import {MatNativeDateModule} from "@angular/material/core";
     BasketComponent,
     LoginComponent
   ],
-  imports: [
-    BrowserModule,
-    KeycloakAngularModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatMenuModule,
-    MatTabsModule,
-    MatInputModule,
-    MatExpansionModule,
-    HttpClientModule,
-    MatCardModule,
-    MatGridListModule,
-    FormsModule,
-    MatSidenavModule,
-    MatButtonModule,
-    AppRoutingModule,
-    MatDividerModule,
-    MatSelectModule,
-    Ng2SearchPipeModule,
-    MatTooltipModule,
-    MatListModule,
-    MatStepperModule,
-    MatTableModule,
-    MatSnackBarModule,
-    MatDatepickerModule,
-    MatNativeDateModule
-  ],
+    imports: [
+        BrowserModule,
+        KeycloakAngularModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatMenuModule,
+        MatTabsModule,
+        MatInputModule,
+        MatExpansionModule,
+        HttpClientModule,
+        MatCardModule,
+        MatGridListModule,
+        FormsModule,
+        MatSidenavModule,
+        MatButtonModule,
+        AppRoutingModule,
+        MatDividerModule,
+        MatSelectModule,
+        Ng2SearchPipeModule,
+        MatTooltipModule,
+        MatListModule,
+        MatStepperModule,
+        MatTableModule,
+        MatSnackBarModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        ReactiveFormsModule
+    ],
   providers: [PortalService
     /*{
       provide: APP_INITIALIZER,

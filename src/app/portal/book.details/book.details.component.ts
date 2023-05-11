@@ -10,7 +10,7 @@ import {StoragesModel} from "../../model/book_models/storages.model";
   styleUrls: ['./book.details.component.css']
 })
 export class BookDetailsComponent {
-  currentBook!: Book;
+  currentBook: Book = new Book();
   listOfStorages!: StoragesModel[];
   constructor(private service: PortalService, private route: ActivatedRoute) {
   }

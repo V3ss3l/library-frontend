@@ -2,16 +2,16 @@
   <mat-expansion-panel hideToggle>
     <mat-expansion-panel-header>
       <mat-panel-title>
-        Search
+        Поиск
       </mat-panel-title>
       <mat-panel-description>
-        Type name or author to find book, you want
+        Введите название, автора или любое слово, относящееся к книге
       </mat-panel-description>
     </mat-expansion-panel-header>
     <form>
     <mat-form-field appearance="outline" style="width: 100%; max-width: 100%;">
-      <mat-label>Search books</mat-label>
-      <input matInput cdkTextareaAutosize placeholder="War and peace" name="search" [(ngModel)]="searchVar">
+      <mat-label>Поиск книг</mat-label>
+      <input matInput cdkTextareaAutosize placeholder="Программирование на C++" name="search" [(ngModel)]="searchVar">
       <mat-icon matSuffix>library_books</mat-icon>
       <mat-hint></mat-hint>
     </mat-form-field>
@@ -27,9 +27,9 @@
       <mat-card-content>{{book.annotation}}</mat-card-content>
       <mat-divider></mat-divider>
       <mat-card-actions>
-        <button mat-icon-button matTooltip="More information about the book" (click)="openBookDetails(book.id)"><mat-icon>expand_more</mat-icon></button>
+        <button mat-icon-button matTooltip="Дополнительная информация о книге" (click)="openBookDetails(book.id)"><mat-icon>expand_more</mat-icon></button>
         <span class="spacer-for-cards"></span>
-        <button mat-icon-button matTooltip="Adding this book to a cart" (click)="transferBookToBasket(book)"><mat-icon>library_add</mat-icon></button>
+        <button mat-icon-button matTooltip="Добавление книги в корзину" (click)="transferBookToBasket(book)"><mat-icon>library_add</mat-icon></button>
       </mat-card-actions>
       <mat-card-footer></mat-card-footer>
     </mat-card>

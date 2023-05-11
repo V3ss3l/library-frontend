@@ -1,6 +1,7 @@
+<form [formGroup]="orderForm">
 <mat-stepper orientation="vertical">
   <mat-step>
-    <ng-template matStepLabel>Order</ng-template>
+    <ng-template matStepLabel>Заказ</ng-template>
     <ng-template matStepContent>
       <mat-card>
         <mat-card-title>Книга</mat-card-title>
@@ -9,37 +10,30 @@
             <mat-list-item>Название книги: {{currentBook.bookName}}</mat-list-item>
             <mat-list-item>Авторы: {{currentBook.author}}</mat-list-item>
           </mat-list>
-          <mat-form-field appearance="fill" class="example-form-field">
-            <mat-label>Choose a date</mat-label>
-            <input matInput #date [matDatepicker]="datepicker">
-            <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
-            <mat-datepicker #datepicker>
-              <mat-datepicker-actions>
-                <button mat-button matDatepickerCancel>Cancel</button>
-                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
-              </mat-datepicker-actions>
-            </mat-datepicker>
-          </mat-form-field>
         </mat-card-content>
       </mat-card>
-      <button mat-button matStepperNext>Next</button>
+      <button mat-button matStepperNext>Следующий</button>
     </ng-template>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Adress</ng-template>
+    <ng-template matStepLabel>Пункт выдачи</ng-template>
     <ng-template matStepContent>
-      <mat-selection-list *ngFor="let storage of listOfStorages">
-        <mat-list-option>{{storage.hall.hallName}}, {{storage.hall.housing.housingName}}</mat-list-option>
-      </mat-selection-list>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button matStepperNext>Next</button>
+      <mat-form-field>
+        <mat-select>
+          <mat-label>Наличие книги в пунктах выдачи</mat-label>
+          <mat-option *ngFor="let storage of listOfStorages" [formControl]="orderForm.controls.storage" [value]="storage">{{storage.hall.hallName}}, {{storage.hall.housing.housingName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-button matStepperPrevious>Назад</button>
+      <button mat-button matStepperNext>Следующий</button>
     </ng-template>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Finish</ng-template>
-    <p>This content was rendered eagerly</p>
-    <button mat-button matStepperPrevious>Back</button>
-    <button mat-raised-button (click)="submit(this.date.value)">Submit</button>
+    <ng-template matStepLabel>Подтверждение</ng-template>
+    <mat-label>Подтвердите заказ: {{currentBook.bookName}}</mat-label>
+    <button mat-button matStepperPrevious>Назад</button>
+    <button mat-raised-button type="submit" (click)="submit()">Подтвердить</button>
   </mat-step>
 </mat-stepper>
+</form>
